@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio | Zahira</title>
+    <title>Zahira Audita | Marketing & Athlete Portfolio</title>
+
+    <meta name="description"
+        content="Portfolio Zahira Audita Afraneta Andini - Mahasiswa Manajemen Pemasaran dan Atlet Tenis Meja Kota Batu.">
 
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -14,477 +22,952 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7f8fc;
-            color: #222;
-            line-height: 1.6;
+        :root {
+            --pink: #ff4fa3;
+            --pink-light: #ff9dcc;
+            --pink-soft: #fff0f7;
+            --black: #090909;
+            --dark: #111111;
+            --gray: #a7a7a7;
+            --white: #ffffff;
         }
 
-        /* NAVBAR */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           SCROLLBAR
+        ========================= */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #090909;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--pink);
+            border-radius: 10px;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
+            height: 75px;
+
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 18px 8%;
-            z-index: 1000;
-            border-bottom: 1px solid #eee;
+            justify-content: space-between;
+
+            padding: 0 8%;
+
+            background: rgba(9, 9, 9, 0.88);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            z-index: 999;
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #1d3557;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .logo span {
-            color: #e9a23b;
+            color: var(--pink);
         }
 
         nav ul {
-            list-style: none;
             display: flex;
-            gap: 30px;
+            list-style: none;
+            gap: 35px;
         }
 
         nav ul li a {
-            text-decoration: none;
-            color: #333;
+            color: #ddd;
             font-size: 14px;
             font-weight: 600;
             transition: 0.3s;
         }
 
         nav ul li a:hover {
-            color: #e9a23b;
+            color: var(--pink);
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
             min-height: 100vh;
+
             display: flex;
             align-items: center;
-            padding: 120px 8% 70px;
-            background: linear-gradient(135deg, #eef3f8, #ffffff);
+
+            padding: 120px 8% 80px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(255,79,163,0.18),
+                    transparent 30%
+                ),
+                #090909;
+
+            position: relative;
         }
 
         .hero-container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1250px;
             margin: auto;
-            display: flex;
+
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+
+            gap: 70px;
             align-items: center;
-            justify-content: space-between;
-            gap: 60px;
         }
 
-        .hero-text {
-            flex: 1;
-        }
+        .hero-small {
+            color: var(--pink);
+            font-size: 14px;
+            letter-spacing: 4px;
+            font-weight: 700;
+            margin-bottom: 20px;
 
-        .small-title {
-            color: #e9a23b;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
+            animation: fadeUp 1s ease forwards;
         }
 
         .hero h1 {
-            font-size: 55px;
-            line-height: 1.15;
-            color: #1d3557;
-            margin-bottom: 20px;
+            font-size: clamp(48px, 7vw, 85px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+
+            margin-bottom: 25px;
+
+            animation: fadeUp 1.2s ease forwards;
         }
 
         .hero h1 span {
-            color: #e9a23b;
+            color: var(--pink);
         }
 
-        .hero p {
-            color: #666;
-            max-width: 600px;
+        .hero-description {
+            color: #bdbdbd;
+            max-width: 650px;
             font-size: 17px;
-            margin-bottom: 30px;
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+
+            animation: fadeUp 1.4s ease forwards;
         }
 
-        .buttons {
+        .hero-buttons {
             display: flex;
             gap: 15px;
+            flex-wrap: wrap;
+
+            animation: fadeUp 1.6s ease forwards;
         }
 
         .btn {
-            padding: 13px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
+            padding: 14px 25px;
+            border-radius: 50px;
+
+            font-size: 14px;
+            font-weight: 700;
+
             transition: 0.3s;
         }
 
-        .btn-primary {
-            background: #1d3557;
+        .btn-pink {
+            background: var(--pink);
             color: white;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            background: #27496d;
+        .btn-pink:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(255,79,163,0.35);
         }
 
         .btn-outline {
-            border: 2px solid #1d3557;
-            color: #1d3557;
-        }
-
-        .btn-outline:hover {
-            background: #1d3557;
+            border: 1px solid #555;
             color: white;
         }
 
-        /* FOTO */
-        .hero-photo {
-            width: 350px;
-            height: 400px;
-            background: white;
-            border-radius: 25px;
-            padding: 12px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-            transform: rotate(2deg);
+        .btn-outline:hover {
+            border-color: var(--pink);
+            color: var(--pink);
+            transform: translateY(-4px);
         }
 
-        .hero-photo img {
+        /* HERO CARD */
+
+        .hero-card {
+            position: relative;
+
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 18px;
+            max-width: 400px;
+            height: 470px;
+
+            margin: auto;
+
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,79,163,0.18),
+                    rgba(255,255,255,0.02)
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            animation: floating 4s ease-in-out infinite;
         }
 
-        /* SECTION */
+        .hero-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 260px;
+            height: 260px;
+
+            background: var(--pink);
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            opacity: 0.18;
+        }
+
+        .hero-card-content {
+            position: relative;
+            z-index: 2;
+
+            text-align: center;
+            padding: 30px;
+        }
+
+        .initial {
+            width: 150px;
+            height: 150px;
+
+            margin: auto auto 25px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #151515;
+
+            border: 2px solid var(--pink);
+
+            font-size: 60px;
+            font-weight: 800;
+
+            color: var(--pink);
+
+            box-shadow: 0 0 50px rgba(255,79,163,0.2);
+        }
+
+        .hero-card h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
         section {
-            padding: 90px 8%;
+            padding: 110px 8%;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-label {
+            color: var(--pink);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
         }
 
         .section-title {
-            text-align: center;
+            font-size: clamp(35px, 5vw, 55px);
+            letter-spacing: -2px;
             margin-bottom: 50px;
         }
 
-        .section-title small {
-            color: #e9a23b;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+        /* =========================
+           ABOUT
+        ========================= */
 
-        .section-title h2 {
-            font-size: 36px;
-            color: #1d3557;
-            margin-top: 8px;
-        }
-
-        /* ABOUT */
         .about {
-            background: white;
+            background: #0e0e0e;
         }
 
-        .about-container {
-            max-width: 1000px;
-            margin: auto;
+        .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 28px;
-            color: #1d3557;
-            margin-bottom: 15px;
+            gap: 70px;
         }
 
         .about-text p {
-            color: #666;
+            color: #aaa;
+            font-size: 16px;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .about-highlight {
+            border-left: 3px solid var(--pink);
+            padding-left: 20px;
+            margin-top: 30px;
+            color: #ddd;
+            font-weight: 600;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education {
+            background: #090909;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+
+            width: 2px;
+
+            background: #292929;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 50px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 3px;
+            top: 5px;
+
+            width: 16px;
+            height: 16px;
+
+            border-radius: 50%;
+
+            background: var(--pink);
+
+            box-shadow: 0 0 20px rgba(255,79,163,0.5);
+        }
+
+        .timeline-item span {
+            color: var(--pink);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .timeline-item h3 {
+            font-size: 23px;
+            margin: 7px 0;
+        }
+
+        .timeline-item p {
+            color: #999;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            background: #0e0e0e;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            padding: 28px;
+
+            border: 1px solid #252525;
+            border-radius: 18px;
+
+            background: #111;
+
+            transition: 0.35s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--pink);
+
+            box-shadow: 0 15px 40px rgba(255,79,163,0.08);
+        }
+
+        .skill-number {
+            color: var(--pink);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .skill-card h3 {
+            margin: 10px 0;
+            font-size: 19px;
+        }
+
+        .skill-card p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           ACHIEVEMENT
+        ========================= */
+
+        .achievement {
+            background: #090909;
+        }
+
+        .achievement-main {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .medal-box {
+            min-height: 400px;
+
+            border-radius: 30px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,79,163,0.2),
+                    transparent 55%
+                ),
+                #111;
+
+            border: 1px solid #292929;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .medal {
+            font-size: 100px;
+
+            animation: pulse 2s infinite;
+        }
+
+        .medal-box h3 {
+            font-size: 30px;
+            margin: 15px 0 5px;
+        }
+
+        .medal-box p {
+            color: #999;
+        }
+
+        .achievement-text h3 {
+            font-size: 35px;
             margin-bottom: 15px;
         }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+        .achievement-text p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
 
-        .skill {
-            padding: 9px 15px;
-            background: #eef3f8;
-            color: #1d3557;
-            border-radius: 20px;
+        .achievement-badge {
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            border-radius: 50px;
+
+            background: rgba(255,79,163,0.1);
+
+            border: 1px solid rgba(255,79,163,0.4);
+
+            color: var(--pink);
+
             font-size: 13px;
-            font-weight: bold;
+            font-weight: 700;
+
+            margin-bottom: 25px;
         }
 
-        /* PROJECT */
-        .projects {
-            background: #f7f8fc;
+        /* =========================
+           NEWS
+        ========================= */
+
+        .news {
+            background: #0e0e0e;
         }
 
-        .project-grid {
-            max-width: 1100px;
-            margin: auto;
+        .news-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
         }
 
-        .project-card {
-            background: white;
+        .news-card {
             padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-            transition: 0.3s;
-            border-left: 5px solid #e9a23b;
+
+            border-radius: 20px;
+
+            background: #111;
+
+            border: 1px solid #252525;
+
+            transition: 0.35s;
         }
 
-        .project-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        .news-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--pink);
         }
 
-        .project-number {
-            color: #e9a23b;
-            font-size: 14px;
-            font-weight: bold;
+        .news-source {
+            color: var(--pink);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
         }
 
-        .project-card h3 {
-            color: #1d3557;
-            margin: 8px 0 12px;
+        .news-card h3 {
             font-size: 21px;
+            line-height: 1.4;
+            margin: 15px 0;
         }
 
-        .project-card p {
-            color: #666;
+        .news-card p {
+            color: #888;
+            line-height: 1.7;
             font-size: 14px;
+            margin-bottom: 20px;
         }
 
-        /* EXPERIENCE */
-        .experience {
-            background: white;
+        .news-link {
+            color: var(--pink);
+            font-size: 14px;
+            font-weight: 700;
         }
 
-        .timeline {
-            max-width: 850px;
-            margin: auto;
+        .news-link:hover {
+            text-decoration: underline;
         }
 
-        .timeline-item {
-            position: relative;
-            padding: 0 0 35px 35px;
-            border-left: 2px solid #dfe4ea;
+        /* =========================
+           ACTIVITIES
+        ========================= */
+
+        .activities {
+            background: #090909;
         }
 
-        .timeline-item:last-child {
-            border-left: none;
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
         }
 
-        .timeline-dot {
-            position: absolute;
-            left: -7px;
-            top: 0;
-            width: 13px;
-            height: 13px;
-            background: #e9a23b;
-            border-radius: 50%;
+        .activity-card {
+            padding: 35px;
+
+            border: 1px solid #252525;
+
+            border-radius: 20px;
+
+            transition: 0.3s;
         }
 
-        .timeline-item h3 {
-            color: #1d3557;
-            margin-bottom: 5px;
+        .activity-card:hover {
+            border-color: var(--pink);
         }
 
-        .timeline-item span {
-            font-size: 13px;
-            color: #e9a23b;
-            font-weight: bold;
+        .activity-card h3 {
+            font-size: 23px;
+            margin-bottom: 12px;
         }
 
-        .timeline-item p {
-            color: #666;
-            margin-top: 10px;
+        .activity-card p {
+            color: #999;
+            line-height: 1.8;
         }
 
-        /* CONTACT */
+        /* =========================
+           CONTACT
+        ========================= */
+
         .contact {
-            background: #1d3557;
-            color: white;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,79,163,0.15),
+                    transparent 45%
+                ),
+                #0e0e0e;
+
             text-align: center;
         }
 
-        .contact .section-title h2 {
-            color: white;
+        .contact .section-title {
+            margin-bottom: 20px;
         }
 
-        .contact p {
-            color: #d9e1ea;
+        .contact-description {
             max-width: 600px;
-            margin: 0 auto 30px;
+            margin: auto;
+
+            color: #999;
+            line-height: 1.8;
+
+            margin-bottom: 35px;
         }
 
-        .contact-links {
+        .contact-buttons {
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
         }
 
-        .contact-links a {
-            text-decoration: none;
-            color: white;
-            border: 1px solid rgba(255,255,255,0.4);
-            padding: 12px 22px;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
+        /* =========================
+           FOOTER
+        ========================= */
 
-        .contact-links a:hover {
-            background: #e9a23b;
-            border-color: #e9a23b;
-        }
-
-        /* FOOTER */
         footer {
-            background: #14263d;
-            color: #bfc8d4;
+            padding: 25px 8%;
+
+            background: #050505;
+
             text-align: center;
-            padding: 20px;
+
+            color: #666;
+
             font-size: 13px;
+
+            border-top: 1px solid #181818;
         }
 
-        /* MOBILE */
-        @media (max-width: 800px) {
+        footer span {
+            color: var(--pink);
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes floating {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+        @keyframes pulse {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
 
             nav {
-                padding: 15px 5%;
+                padding: 0 5%;
             }
 
             nav ul {
-                gap: 12px;
+                gap: 13px;
             }
 
             nav ul li a {
-                font-size: 11px;
+                font-size: 10px;
+            }
+
+            section {
+                padding: 80px 6%;
             }
 
             .hero {
-                padding: 120px 7% 60px;
+                padding: 120px 6% 70px;
             }
 
             .hero-container {
-                flex-direction: column-reverse;
+                grid-template-columns: 1fr;
                 text-align: center;
             }
 
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            .hero p {
+            .hero-description {
                 margin-left: auto;
                 margin-right: auto;
             }
 
-            .buttons {
+            .hero-buttons {
                 justify-content: center;
             }
 
-            .hero-photo {
-                width: 270px;
-                height: 320px;
+            .hero-card {
+                height: 400px;
+                max-width: 330px;
             }
 
-            .about-container {
+            .about-grid,
+            .achievement-main {
                 grid-template-columns: 1fr;
             }
 
-            .project-grid {
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .news-grid,
+            .activity-grid {
                 grid-template-columns: 1fr;
             }
 
-            section {
-                padding: 70px 7%;
-            }
-
-            .section-title h2 {
-                font-size: 30px;
-            }
         }
+
+        @media (max-width: 500px) {
+
+            .logo {
+                font-size: 19px;
+            }
+
+            nav ul {
+                gap: 8px;
+            }
+
+            nav ul li a {
+                font-size: 9px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .medal {
+                font-size: 75px;
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
 
-<!-- NAVBAR -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
-    <div class="logo">Zahira<span>.</span></div>
+
+    <div class="logo">
+        Zahira<span>.</span>
+    </div>
 
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#achievement">Achievement</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
     </ul>
+
 </nav>
 
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero" id="home">
 
     <div class="hero-container">
 
-        <div class="hero-text">
+        <div>
 
-            <div class="small-title">
+            <div class="hero-small">
                 MARKETING MANAGEMENT STUDENT
             </div>
 
             <h1>
-                Hello, I'm<br>
-                <span>Zahira.</span>
+                Zahira<br>
+                <span>Audita.</span>
             </h1>
 
-            <p>
-                Mahasiswa Manajemen Pemasaran yang memiliki ketertarikan
-                pada pemasaran, bisnis, e-commerce, pengelolaan proyek,
-                serta pengembangan ide kreatif.
+            <p class="hero-description">
+
+                Mahasiswa Sarjana Terapan Manajemen Pemasaran
+                Politeknik Negeri Malang yang memiliki ketertarikan
+                pada dunia pemasaran, bisnis, komunikasi, kreativitas,
+                serta pengembangan diri.
+
+                Di luar dunia akademik, saya juga aktif sebagai
+                atlet tenis meja Kota Batu.
+
             </p>
 
-            <div class="buttons">
-                <a href="#projects" class="btn btn-primary">
-                    Lihat Project
+            <div class="hero-buttons">
+
+                <a href="#about" class="btn btn-pink">
+                    About Me
                 </a>
 
-                <a href="#contact" class="btn btn-outline">
-                    Hubungi Saya
+                <a href="#achievement" class="btn btn-outline">
+                    My Achievement
                 </a>
+
             </div>
 
         </div>
 
 
-        <!--
-        GANTI FOTO DI SINI
+        <div class="hero-card">
 
-        Kalau belum punya foto, bagian ini bisa tetap digunakan.
-        Untuk memasukkan foto:
-        1. Upload foto ke repository GitHub
-        2. Ganti "foto.jpg" dengan nama file foto kamu.
-        -->
+            <div class="hero-card-content">
 
-        <div class="hero-photo">
-            <img src="foto.jpg" alt="Foto Zahira">
+                <div class="initial">
+                    ZA
+                </div>
+
+                <h3>
+                    Zahira Audita
+                </h3>
+
+                <p>
+                    Marketing Management Student
+                    <br>
+                    & Table Tennis Athlete
+                </p>
+
+            </div>
+
         </div>
 
     </div>
@@ -492,52 +975,67 @@
 </section>
 
 
-<!-- ABOUT -->
+
+<!-- =========================
+     ABOUT
+========================= -->
+
 <section class="about" id="about">
 
-    <div class="section-title">
-        <small>ABOUT ME</small>
-        <h2>Tentang Saya</h2>
-    </div>
+    <div class="section-container">
 
-    <div class="about-container">
-
-        <div class="about-text">
-
-            <h3>Belajar, Berkembang & Berkarya</h3>
-
-            <p>
-                Saya merupakan mahasiswa Manajemen Pemasaran yang
-                tertarik untuk memahami bagaimana strategi pemasaran
-                dapat diterapkan dalam dunia bisnis.
-            </p>
-
-            <p>
-                Melalui berbagai kegiatan akademik, proyek, dan
-                pengalaman praktik, saya terus mengembangkan kemampuan
-                dalam pemasaran, komunikasi, kerja sama tim, serta
-                pengelolaan proyek.
-            </p>
-
+        <div class="section-label">
+            ABOUT ME
         </div>
 
+        <h2 class="section-title">
+            A little bit about me.
+        </h2>
 
-        <div>
 
-            <h3 style="color:#1d3557; margin-bottom:20px;">
-                Skills
-            </h3>
+        <div class="about-grid">
 
-            <div class="skills">
+            <div class="about-text">
 
-                <div class="skill">Marketing</div>
-                <div class="skill">Digital Marketing</div>
-                <div class="skill">E-Commerce</div>
-                <div class="skill">Social Media</div>
-                <div class="skill">Content Creation</div>
-                <div class="skill">Teamwork</div>
-                <div class="skill">Communication</div>
-                <div class="skill">Microsoft Office</div>
+                <p>
+
+                    Saya adalah <strong>Zahira Audita Afraneta Andini</strong>,
+                    mahasiswa semester 5 Jurusan Administrasi Niaga,
+                    Program Studi Sarjana Terapan Manajemen Pemasaran
+                    di Politeknik Negeri Malang.
+
+                </p>
+
+                <p>
+
+                    Saya memiliki ketertarikan terhadap dunia pemasaran,
+                    bisnis, komunikasi, digital marketing, serta
+                    bagaimana sebuah ide dapat dikembangkan menjadi
+                    sesuatu yang memiliki nilai.
+
+                </p>
+
+                <p>
+
+                    Bagi saya, proses belajar tidak hanya dilakukan
+                    di dalam kelas. Pengalaman sebagai atlet tenis meja
+                    juga mengajarkan saya mengenai disiplin, konsistensi,
+                    kerja keras, fokus, dan kemampuan untuk terus
+                    berkembang.
+
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="about-highlight">
+
+                    "Terus belajar, terus berkembang,
+                    dan memberikan yang terbaik dalam setiap kesempatan."
+
+                </div>
 
             </div>
 
@@ -548,103 +1046,300 @@
 </section>
 
 
-<!-- PROJECTS -->
-<section class="projects" id="projects">
 
-    <div class="section-title">
+<!-- =========================
+     EDUCATION
+========================= -->
 
-        <small>MY WORK</small>
+<section class="education" id="education">
 
-        <h2>Projects</h2>
+    <div class="section-container">
+
+        <div class="section-label">
+            EDUCATION
+        </div>
+
+        <h2 class="section-title">
+            My educational journey.
+        </h2>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <span>ELEMENTARY SCHOOL</span>
+
+                <h3>
+                    SDN Punten 01
+                </h3>
+
+                <p>
+                    Pendidikan Sekolah Dasar.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <span>JUNIOR HIGH SCHOOL</span>
+
+                <h3>
+                    SMP Negeri 01 Batu
+                </h3>
+
+                <p>
+                    Pendidikan Sekolah Menengah Pertama.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <span>SENIOR HIGH SCHOOL</span>
+
+                <h3>
+                    SMA Negeri 01 Batu
+                </h3>
+
+                <p>
+                    Pendidikan Sekolah Menengah Atas.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <span>HIGHER EDUCATION</span>
+
+                <h3>
+                    Politeknik Negeri Malang
+                </h3>
+
+                <p>
+
+                    Jurusan Administrasi Niaga —
+                    Program Studi Sarjana Terapan
+                    Manajemen Pemasaran.
+
+                    <br><br>
+
+                    <strong>Semester 5</strong>
+
+                </p>
+
+            </div>
+
+
+        </div>
 
     </div>
 
+</section>
 
-    <div class="project-grid">
 
 
-        <div class="project-card">
+<!-- =========================
+     SKILLS
+========================= -->
 
-            <div class="project-number">
-                PROJECT 01
-            </div>
+<section class="skills" id="skills">
 
-            <h3>Project PKL PT STTCC</h3>
+    <div class="section-container">
 
-            <p>
-                Pengalaman dan kegiatan selama Praktik Kerja Lapangan
-                di PT Surabaya Technology Training and Consultant Center
-                (PT STTCC), termasuk kegiatan yang berkaitan dengan
-                pemasaran dan pengembangan program.
-            </p>
-
+        <div class="section-label">
+            SKILLS
         </div>
 
+        <h2 class="section-title">
+            What I can bring.
+        </h2>
 
-        <div class="project-card">
 
-            <div class="project-number">
-                PROJECT 02
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    01
+                </div>
+
+                <h3>
+                    Marketing
+                </h3>
+
+                <p>
+                    Memahami dasar-dasar pemasaran,
+                    strategi pemasaran, segmentasi,
+                    dan perilaku konsumen.
+                </p>
+
             </div>
 
-            <h3>E-Commerce & E-Marketing</h3>
 
-            <p>
-                Project akademik mengenai penerapan e-commerce dan
-                e-marketing dalam mendukung kegiatan pemasaran serta
-                hubungan dengan pelanggan di era digital.
-            </p>
+            <div class="skill-card">
 
-        </div>
+                <div class="skill-number">
+                    02
+                </div>
 
+                <h3>
+                    Digital Marketing
+                </h3>
 
-        <div class="project-card">
+                <p>
+                    Memahami pemanfaatan media digital
+                    dan social media sebagai bagian
+                    dari kegiatan pemasaran.
+                </p>
 
-            <div class="project-number">
-                PROJECT 03
             </div>
 
-            <h3>Manajemen Rantai Pasok</h3>
 
-            <p>
-                Project observasi dan analisis mengenai manajemen
-                rantai pasok pada UMKM, mulai dari pengadaan bahan,
-                proses produksi hingga distribusi produk.
-            </p>
+            <div class="skill-card">
 
-        </div>
+                <div class="skill-number">
+                    03
+                </div>
 
+                <h3>
+                    Communication
+                </h3>
 
-        <div class="project-card">
+                <p>
+                    Mampu berkomunikasi dan menyampaikan
+                    ide dengan baik dalam lingkungan
+                    akademik maupun kerja sama tim.
+                </p>
 
-            <div class="project-number">
-                PROJECT 04
             </div>
 
-            <h3>Design & Content</h3>
 
-            <p>
-                Project pembuatan desain dan konten sebagai media
-                komunikasi pemasaran untuk menyampaikan informasi
-                secara menarik dan mudah dipahami.
-            </p>
+            <div class="skill-card">
 
-        </div>
+                <div class="skill-number">
+                    04
+                </div>
 
+                <h3>
+                    Teamwork
+                </h3>
 
-        <div class="project-card">
+                <p>
+                    Terbiasa bekerja bersama tim dalam
+                    menyelesaikan tugas dan kegiatan.
+                </p>
 
-            <div class="project-number">
-                PROJECT 05
             </div>
 
-            <h3>Project Lainnya</h3>
 
-            <p>
-                Berbagai tugas, kegiatan, dan project lainnya yang
-                dikerjakan selama proses pembelajaran di bidang
-                Manajemen Pemasaran.
-            </p>
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    05
+                </div>
+
+                <h3>
+                    Public Speaking
+                </h3>
+
+                <p>
+                    Memiliki kemampuan dasar dalam
+                    menyampaikan presentasi dan
+                    berbicara di depan orang lain.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    06
+                </div>
+
+                <h3>
+                    Time Management
+                </h3>
+
+                <p>
+                    Mampu mengatur waktu antara
+                    pendidikan, kegiatan, latihan,
+                    dan tanggung jawab lainnya.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    07
+                </div>
+
+                <h3>
+                    Microsoft Office
+                </h3>
+
+                <p>
+                    Menggunakan Microsoft Word,
+                    PowerPoint, dan Excel untuk
+                    kebutuhan akademik.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    08
+                </div>
+
+                <h3>
+                    Content Creation
+                </h3>
+
+                <p>
+                    Memiliki ketertarikan dalam
+                    pembuatan konten dan penyampaian
+                    informasi secara kreatif.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    09
+                </div>
+
+                <h3>
+                    Discipline
+                </h3>
+
+                <p>
+                    Terbiasa menjaga konsistensi,
+                    fokus, dan disiplin melalui
+                    aktivitas sebagai atlet.
+                </p>
+
+            </div>
+
 
         </div>
 
@@ -653,107 +1348,322 @@
 </section>
 
 
-<!-- EXPERIENCE -->
-<section class="experience" id="experience">
 
-    <div class="section-title">
+<!-- =========================
+     ACHIEVEMENT
+========================= -->
 
-        <small>MY JOURNEY</small>
+<section class="achievement" id="achievement">
 
-        <h2>Experience</h2>
+    <div class="section-container">
 
-    </div>
-
-
-    <div class="timeline">
-
-
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <span>PRAKTIK KERJA LAPANGAN</span>
-
-            <h3>Pengalaman PKL</h3>
-
-            <p>
-                Mengikuti kegiatan Praktik Kerja Lapangan dan
-                mendapatkan pengalaman mengenai dunia kerja,
-                komunikasi, tanggung jawab, serta penerapan ilmu
-                yang telah dipelajari.
-            </p>
-
+        <div class="section-label">
+            ACHIEVEMENT
         </div>
 
+        <h2 class="section-title">
+            Beyond the classroom.
+        </h2>
 
-        <div class="timeline-item">
 
-            <div class="timeline-dot"></div>
+        <div class="achievement-main">
 
-            <span>ORGANISASI & KEGIATAN</span>
 
-            <h3>Pengalaman Organisasi/Kegiatan</h3>
+            <div class="medal-box">
 
-            <p>
-                Berpartisipasi dalam berbagai kegiatan yang
-                membantu mengembangkan kemampuan komunikasi,
-                kerja sama tim, tanggung jawab, dan kemampuan
-                beradaptasi.
-            </p>
+                <div class="medal">
+                    🥈
+                </div>
+
+                <h3>
+                    2nd Place
+                </h3>
+
+                <p>
+                    Porseni XV Politeknik 2026
+                </p>
+
+            </div>
+
+
+            <div class="achievement-text">
+
+                <div class="achievement-badge">
+                    TABLE TENNIS ATHLETE
+                </div>
+
+                <h3>
+                    Representing Politeknik Negeri Malang
+                </h3>
+
+                <p>
+
+                    Selain menjalani pendidikan di bidang
+                    Manajemen Pemasaran, saya juga aktif
+                    sebagai atlet tenis meja Kota Batu.
+
+                </p>
+
+                <p>
+
+                    Salah satu pencapaian yang saya raih adalah
+                    <strong>Juara 2 Tenis Meja pada Porseni XV
+                    Politeknik 2026</strong> sebagai perwakilan
+                    Politeknik Negeri Malang.
+
+                </p>
+
+                <p>
+
+                    Pengalaman sebagai atlet menjadi bagian penting
+                    dalam perjalanan saya karena mengajarkan
+                    kedisiplinan, kerja keras, konsistensi,
+                    sportivitas, dan mental untuk terus berkembang.
+
+                </p>
+
+            </div>
+
 
         </div>
-
 
     </div>
 
 </section>
 
 
-<!-- CONTACT -->
+
+<!-- =========================
+     NEWS / MEDIA COVERAGE
+========================= -->
+
+<section class="news">
+
+    <div class="section-container">
+
+        <div class="section-label">
+            MEDIA COVERAGE
+        </div>
+
+        <h2 class="section-title">
+            Featured in the media.
+        </h2>
+
+
+        <div class="news-grid">
+
+
+            <!-- RADAR MALANG -->
+
+            <div class="news-card">
+
+                <div class="news-source">
+                    RADAR MALANG
+                </div>
+
+                <h3>
+
+                    Tenis Meja Kota Batu Tambah Jam Terbang
+                    Atlet di Sejumlah Kejuaraan Nasional
+
+                </h3>
+
+                <p>
+
+                    Liputan mengenai perkembangan dan pengalaman
+                    atlet tenis meja Kota Batu dalam mengikuti
+                    berbagai kejuaraan.
+
+                </p>
+
+                <a
+                    class="news-link"
+                    href="https://radarmalang.jawapos.com/olahraga/2608090023/tenis-meja-kota-batu-tambah-jam-terbang-atlet-di-sejumlah-kejuaraan-nasional"
+                    target="_blank"
+                >
+
+                    Baca Artikel →
+
+                </a>
+
+            </div>
+
+
+            <!-- KABAR JAGAD -->
+
+            <div class="news-card">
+
+                <div class="news-source">
+                    KABAR JAGAD
+                </div>
+
+                <h3>
+
+                    Membanggakan, Andini Atlet Polinema
+                    Raih Juara 2 Tenis Meja di Porseni XV
+                    Politeknik 2026
+
+                </h3>
+
+                <p>
+
+                    Pemberitaan mengenai pencapaian Zahira
+                    Audita Afraneta Andini yang meraih
+                    Juara 2 tenis meja pada Porseni XV
+                    Politeknik 2026.
+
+                </p>
+
+                <a
+                    class="news-link"
+                    href="https://www.kabarjagad.id/olahraga/membanggakan-andini-atlet-polinema-raih-juara-2-tenis-meja-di-porseni-xv-politeknik-2026/"
+                    target="_blank"
+                >
+
+                    Baca Artikel →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ACTIVITIES
+========================= -->
+
+<section class="activities">
+
+    <div class="section-container">
+
+        <div class="section-label">
+            ACTIVITIES
+        </div>
+
+        <h2 class="section-title">
+            What keeps me moving.
+        </h2>
+
+
+        <div class="activity-grid">
+
+
+            <div class="activity-card">
+
+                <h3>
+                    🎓 Academic Journey
+                </h3>
+
+                <p>
+
+                    Menjalani proses pendidikan sebagai mahasiswa
+                    Manajemen Pemasaran dengan terus mengembangkan
+                    pengetahuan dan kemampuan di bidang pemasaran,
+                    bisnis, serta komunikasi.
+
+                </p>
+
+            </div>
+
+
+            <div class="activity-card">
+
+                <h3>
+                    🏓 Table Tennis
+                </h3>
+
+                <p>
+
+                    Aktif sebagai atlet tenis meja Kota Batu
+                    dan mengikuti berbagai kegiatan serta
+                    kejuaraan untuk meningkatkan pengalaman,
+                    kemampuan, dan prestasi.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
 <section class="contact" id="contact">
 
-    <div class="section-title">
+    <div class="section-container">
 
-        <small>GET IN TOUCH</small>
+        <div class="section-label">
+            CONTACT
+        </div>
 
-        <h2>Let's Connect</h2>
+        <h2 class="section-title">
+            Let's connect.
+        </h2>
 
-    </div>
+        <p class="contact-description">
 
-    <p>
-        Terima kasih sudah mengunjungi portfolio saya.
-        Jika ingin terhubung atau berdiskusi mengenai project,
-        kerja sama, maupun kesempatan lainnya, silakan hubungi saya.
-    </p>
+            Terima kasih telah mengunjungi portfolio saya.
+            Saya terbuka untuk terhubung, berdiskusi,
+            berkolaborasi, dan mendapatkan kesempatan
+            baru untuk terus berkembang.
+
+        </p>
 
 
-    <div class="contact-links">
+        <div class="contact-buttons">
 
-        <!-- GANTI LINK DI BAWAH -->
 
-        <a href="https://instagram.com/" target="_blank">
-            Instagram
-        </a>
+            <a
+                href="mailto:zafranetaandini@gmail.com"
+                class="btn btn-pink"
+            >
+                Email Me
+            </a>
 
-        <a href="https://linkedin.com/" target="_blank">
-            LinkedIn
-        </a>
 
-        <a href="mailto:emailkamu@gmail.com">
-            Email
-        </a>
+            <a
+                href="https://instagram.com/_zahiraandini"
+                target="_blank"
+                class="btn btn-outline"
+            >
+                Instagram
+            </a>
+
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-    © 2026 Zahira — Marketing Management Portfolio
+    © 2026 <span>Zahira Audita Afraneta Andini</span>.
+    All Rights Reserved.
 
 </footer>
+
 
 
 </body>
