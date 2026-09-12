@@ -384,6 +384,7 @@
             content: "";
 
             position: absolute;
+
             left: 10px;
             top: 0;
             bottom: 0;
@@ -564,6 +565,57 @@
             margin-bottom: 25px;
         }
 
+        .achievement-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 50px;
+        }
+
+        .achievement-card {
+            padding: 25px;
+
+            background: #111;
+
+            border: 1px solid #252525;
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-6px);
+
+            border-color: var(--pink);
+
+            box-shadow: 0 15px 35px rgba(255,79,163,0.08);
+        }
+
+        .achievement-card:last-child {
+            grid-column: 1 / -1;
+        }
+
+        .achievement-card .number {
+            color: var(--pink);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .achievement-card h4 {
+            font-size: 19px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .achievement-card p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
         /* =========================
            NEWS
         ========================= */
@@ -688,6 +740,7 @@
             margin: auto;
 
             color: #999;
+
             line-height: 1.8;
 
             margin-bottom: 35px;
@@ -814,6 +867,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .achievement-list {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-card:last-child {
+                grid-column: auto;
+            }
+
             .skills-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -910,16 +971,22 @@
 
     <div class="hero-container">
 
+
         <div>
 
             <div class="hero-small">
                 MARKETING MANAGEMENT STUDENT
             </div>
 
+
             <h1>
+
                 Zahira<br>
+
                 <span>Audita.</span>
+
             </h1>
+
 
             <p class="hero-description">
 
@@ -932,6 +999,7 @@
                 atlet tenis meja Kota Batu.
 
             </p>
+
 
             <div class="hero-buttons">
 
@@ -948,6 +1016,7 @@
         </div>
 
 
+
         <div class="hero-card">
 
             <div class="hero-card-content">
@@ -961,14 +1030,19 @@
                 </h3>
 
                 <p>
+
                     Marketing Management Student
+
                     <br>
+
                     & Table Tennis Athlete
+
                 </p>
 
             </div>
 
         </div>
+
 
     </div>
 
@@ -984,27 +1058,33 @@
 
     <div class="section-container">
 
+
         <div class="section-label">
             ABOUT ME
         </div>
+
 
         <h2 class="section-title">
             A little bit about me.
         </h2>
 
 
+
         <div class="about-grid">
+
 
             <div class="about-text">
 
                 <p>
 
-                    Saya adalah <strong>Zahira Audita Afraneta Andini</strong>,
+                    Saya adalah
+                    <strong>Zahira Audita Afraneta Andini</strong>,
                     mahasiswa semester 5 Jurusan Administrasi Niaga,
                     Program Studi Sarjana Terapan Manajemen Pemasaran
                     di Politeknik Negeri Malang.
 
                 </p>
+
 
                 <p>
 
@@ -1014,6 +1094,7 @@
                     sesuatu yang memiliki nilai.
 
                 </p>
+
 
                 <p>
 
@@ -1028,6 +1109,7 @@
             </div>
 
 
+
             <div>
 
                 <div class="about-highlight">
@@ -1038,6 +1120,7 @@
                 </div>
 
             </div>
+
 
         </div>
 
@@ -1055,13 +1138,16 @@
 
     <div class="section-container">
 
+
         <div class="section-label">
             EDUCATION
         </div>
 
+
         <h2 class="section-title">
             My educational journey.
         </h2>
+
 
 
         <div class="timeline">
@@ -1071,7 +1157,9 @@
 
                 <div class="timeline-dot"></div>
 
-                <span>ELEMENTARY SCHOOL</span>
+                <span>
+                    ELEMENTARY SCHOOL
+                </span>
 
                 <h3>
                     SDN Punten 01
@@ -1084,11 +1172,14 @@
             </div>
 
 
+
             <div class="timeline-item">
 
                 <div class="timeline-dot"></div>
 
-                <span>JUNIOR HIGH SCHOOL</span>
+                <span>
+                    JUNIOR HIGH SCHOOL
+                </span>
 
                 <h3>
                     SMP Negeri 01 Batu
@@ -1101,11 +1192,14 @@
             </div>
 
 
+
             <div class="timeline-item">
 
                 <div class="timeline-dot"></div>
 
-                <span>SENIOR HIGH SCHOOL</span>
+                <span>
+                    SENIOR HIGH SCHOOL
+                </span>
 
                 <h3>
                     SMA Negeri 01 Batu
@@ -1118,11 +1212,14 @@
             </div>
 
 
+
             <div class="timeline-item">
 
                 <div class="timeline-dot"></div>
 
-                <span>HIGHER EDUCATION</span>
+                <span>
+                    HIGHER EDUCATION
+                </span>
 
                 <h3>
                     Politeknik Negeri Malang
@@ -1159,13 +1256,16 @@
 
     <div class="section-container">
 
+
         <div class="section-label">
             SKILLS
         </div>
 
+
         <h2 class="section-title">
             What I can bring.
         </h2>
+
 
 
         <div class="skills-grid">
@@ -1182,12 +1282,15 @@
                 </h3>
 
                 <p>
+
                     Memahami dasar-dasar pemasaran,
                     strategi pemasaran, segmentasi,
                     dan perilaku konsumen.
+
                 </p>
 
             </div>
+
 
 
             <div class="skill-card">
@@ -1201,12 +1304,15 @@
                 </h3>
 
                 <p>
+
                     Memahami pemanfaatan media digital
                     dan social media sebagai bagian
                     dari kegiatan pemasaran.
+
                 </p>
 
             </div>
+
 
 
             <div class="skill-card">
@@ -1220,12 +1326,15 @@
                 </h3>
 
                 <p>
+
                     Mampu berkomunikasi dan menyampaikan
                     ide dengan baik dalam lingkungan
                     akademik maupun kerja sama tim.
+
                 </p>
 
             </div>
+
 
 
             <div class="skill-card">
@@ -1239,11 +1348,14 @@
                 </h3>
 
                 <p>
+
                     Terbiasa bekerja bersama tim dalam
                     menyelesaikan tugas dan kegiatan.
+
                 </p>
 
             </div>
+
 
 
             <div class="skill-card">
@@ -1257,12 +1369,15 @@
                 </h3>
 
                 <p>
+
                     Memiliki kemampuan dasar dalam
                     menyampaikan presentasi dan
                     berbicara di depan orang lain.
+
                 </p>
 
             </div>
+
 
 
             <div class="skill-card">
@@ -1276,12 +1391,15 @@
                 </h3>
 
                 <p>
+
                     Mampu mengatur waktu antara
                     pendidikan, kegiatan, latihan,
                     dan tanggung jawab lainnya.
+
                 </p>
 
             </div>
+
 
 
             <div class="skill-card">
@@ -1295,12 +1413,15 @@
                 </h3>
 
                 <p>
+
                     Menggunakan Microsoft Word,
                     PowerPoint, dan Excel untuk
                     kebutuhan akademik.
+
                 </p>
 
             </div>
+
 
 
             <div class="skill-card">
@@ -1314,12 +1435,15 @@
                 </h3>
 
                 <p>
+
                     Memiliki ketertarikan dalam
                     pembuatan konten dan penyampaian
                     informasi secara kreatif.
+
                 </p>
 
             </div>
+
 
 
             <div class="skill-card">
@@ -1333,9 +1457,11 @@
                 </h3>
 
                 <p>
+
                     Terbiasa menjaga konsistensi,
                     fokus, dan disiplin melalui
                     aktivitas sebagai atlet.
+
                 </p>
 
             </div>
@@ -1357,13 +1483,16 @@
 
     <div class="section-container">
 
+
         <div class="section-label">
             ACHIEVEMENT
         </div>
 
+
         <h2 class="section-title">
-            Beyond the classroom.
+            My Achievements.
         </h2>
+
 
 
         <div class="achievement-main">
@@ -1372,18 +1501,19 @@
             <div class="medal-box">
 
                 <div class="medal">
-                    🥈
+                    🏆
                 </div>
 
                 <h3>
-                    2nd Place
+                    5 Achievements
                 </h3>
 
                 <p>
-                    Porseni XV Politeknik 2026
+                    Table Tennis • 2025–2026
                 </p>
 
             </div>
+
 
 
             <div class="achievement-text">
@@ -1392,9 +1522,11 @@
                     TABLE TENNIS ATHLETE
                 </div>
 
+
                 <h3>
                     Representing Politeknik Negeri Malang
                 </h3>
+
 
                 <p>
 
@@ -1404,21 +1536,173 @@
 
                 </p>
 
+
                 <p>
 
-                    Salah satu pencapaian yang saya raih adalah
-                    <strong>Juara 2 Tenis Meja pada Porseni XV
-                    Politeknik 2026</strong> sebagai perwakilan
-                    Politeknik Negeri Malang.
+                    Berbagai kejuaraan yang saya ikuti menjadi
+                    bagian penting dari perjalanan saya untuk
+                    mengembangkan kemampuan, pengalaman,
+                    sportivitas, dan mental bertanding.
 
                 </p>
+
 
                 <p>
 
                     Pengalaman sebagai atlet menjadi bagian penting
                     dalam perjalanan saya karena mengajarkan
                     kedisiplinan, kerja keras, konsistensi,
-                    sportivitas, dan mental untuk terus berkembang.
+                    sportivitas, fokus, dan mental untuk terus berkembang.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             5 PRESTASI
+        ========================= -->
+
+        <div class="achievement-list">
+
+
+            <!-- PRESTASI 1 -->
+
+            <div class="achievement-card">
+
+                <div class="number">
+                    ACHIEVEMENT 01
+                </div>
+
+
+                <h4>
+
+                    Juara 3 Tenis Meja Beregu Putri
+                    PORPROV Jatim 2025
+
+                </h4>
+
+
+                <p>
+
+                    Meraih Juara 3 pada nomor beregu putri
+                    dalam PORPROV Jawa Timur 2025.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- PRESTASI 2 -->
+
+            <div class="achievement-card">
+
+                <div class="number">
+                    ACHIEVEMENT 02
+                </div>
+
+
+                <h4>
+
+                    Juara 3 Tunggal Tenis Meja Putri
+                    POMPROV Jatim 2025
+
+                </h4>
+
+
+                <p>
+
+                    Meraih Juara 3 pada nomor tunggal putri
+                    dalam POMPROV Jawa Timur 2025.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- PRESTASI 3 -->
+
+            <div class="achievement-card">
+
+                <div class="number">
+                    ACHIEVEMENT 03
+                </div>
+
+
+                <h4>
+
+                    Juara 3 Ganda Campuran
+                    POMPROV Jatim 2025
+
+                </h4>
+
+
+                <p>
+
+                    Meraih Juara 3 pada nomor ganda campuran
+                    dalam POMPROV Jawa Timur 2025.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- PRESTASI 4 -->
+
+            <div class="achievement-card">
+
+                <div class="number">
+                    ACHIEVEMENT 04
+                </div>
+
+
+                <h4>
+
+                    Juara 3 Beregu Liga Jatim 2026
+
+                </h4>
+
+
+                <p>
+
+                    Meraih Juara 3 pada nomor beregu
+                    dalam kompetisi Liga Jawa Timur 2026.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- PRESTASI 5 -->
+
+            <div class="achievement-card">
+
+                <div class="number">
+                    ACHIEVEMENT 05
+                </div>
+
+
+                <h4>
+
+                    Juara 2 Tunggal Putri Porseni
+                    Politeknik se-Indonesia
+
+                </h4>
+
+
+                <p>
+
+                    Meraih Juara 2 pada nomor tunggal putri
+                    dalam Porseni Politeknik se-Indonesia
+                    di Politeknik Negeri Medan.
 
                 </p>
 
@@ -1441,13 +1725,16 @@
 
     <div class="section-container">
 
+
         <div class="section-label">
             MEDIA COVERAGE
         </div>
 
+
         <h2 class="section-title">
             Featured in the media.
         </h2>
+
 
 
         <div class="news-grid">
@@ -1461,12 +1748,14 @@
                     RADAR MALANG
                 </div>
 
+
                 <h3>
 
                     Tenis Meja Kota Batu Tambah Jam Terbang
                     Atlet di Sejumlah Kejuaraan Nasional
 
                 </h3>
+
 
                 <p>
 
@@ -1475,6 +1764,7 @@
                     berbagai kejuaraan.
 
                 </p>
+
 
                 <a
                     class="news-link"
@@ -1489,6 +1779,7 @@
             </div>
 
 
+
             <!-- KABAR JAGAD -->
 
             <div class="news-card">
@@ -1496,6 +1787,7 @@
                 <div class="news-source">
                     KABAR JAGAD
                 </div>
+
 
                 <h3>
 
@@ -1505,6 +1797,7 @@
 
                 </h3>
 
+
                 <p>
 
                     Pemberitaan mengenai pencapaian Zahira
@@ -1513,6 +1806,7 @@
                     Politeknik 2026.
 
                 </p>
+
 
                 <a
                     class="news-link"
@@ -1543,13 +1837,16 @@
 
     <div class="section-container">
 
+
         <div class="section-label">
             ACTIVITIES
         </div>
 
+
         <h2 class="section-title">
             What keeps me moving.
         </h2>
+
 
 
         <div class="activity-grid">
@@ -1560,6 +1857,7 @@
                 <h3>
                     🎓 Academic Journey
                 </h3>
+
 
                 <p>
 
@@ -1573,11 +1871,13 @@
             </div>
 
 
+
             <div class="activity-card">
 
                 <h3>
                     🏓 Table Tennis
                 </h3>
+
 
                 <p>
 
@@ -1607,13 +1907,16 @@
 
     <div class="section-container">
 
+
         <div class="section-label">
             CONTACT
         </div>
 
+
         <h2 class="section-title">
             Let's connect.
         </h2>
+
 
         <p class="contact-description">
 
@@ -1625,6 +1928,7 @@
         </p>
 
 
+
         <div class="contact-buttons">
 
 
@@ -1632,8 +1936,11 @@
                 href="mailto:zafranetaandini@gmail.com"
                 class="btn btn-pink"
             >
+
                 Email Me
+
             </a>
+
 
 
             <a
@@ -1641,7 +1948,9 @@
                 target="_blank"
                 class="btn btn-outline"
             >
+
                 Instagram
+
             </a>
 
 
@@ -1659,11 +1968,11 @@
 
 <footer>
 
-    © 2026 <span>Zahira Audita Afraneta Andini</span>.
+    ©️ 2026
+    <span>Zahira Audita Afraneta Andini</span>.
     All Rights Reserved.
 
 </footer>
-
 
 
 </body>
