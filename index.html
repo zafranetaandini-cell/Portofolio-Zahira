@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | Zahira</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f8fc;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #1d3557;
+        }
+
+        .logo span {
+            color: #e9a23b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e9a23b;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 8% 70px;
+            background: linear-gradient(135deg, #eef3f8, #ffffff);
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .small-title {
+            color: #e9a23b;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.15;
+            color: #1d3557;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #e9a23b;
+        }
+
+        .hero p {
+            color: #666;
+            max-width: 600px;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #1d3557;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #27496d;
+        }
+
+        .btn-outline {
+            border: 2px solid #1d3557;
+            color: #1d3557;
+        }
+
+        .btn-outline:hover {
+            background: #1d3557;
+            color: white;
+        }
+
+        /* FOTO */
+        .hero-photo {
+            width: 350px;
+            height: 400px;
+            background: white;
+            border-radius: 25px;
+            padding: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+            transform: rotate(2deg);
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        /* SECTION */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title small {
+            color: #e9a23b;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #1d3557;
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
+        .about {
+            background: white;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            color: #1d3557;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            padding: 9px 15px;
+            background: #eef3f8;
+            color: #1d3557;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* PROJECT */
+        .projects {
+            background: #f7f8fc;
+        }
+
+        .project-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            transition: 0.3s;
+            border-left: 5px solid #e9a23b;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .project-number {
+            color: #e9a23b;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .project-card h3 {
+            color: #1d3557;
+            margin: 8px 0 12px;
+            font-size: 21px;
+        }
+
+        .project-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* EXPERIENCE */
+        .experience {
+            background: white;
+        }
+
+        .timeline {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 0 0 35px 35px;
+            border-left: 2px solid #dfe4ea;
+        }
+
+        .timeline-item:last-child {
+            border-left: none;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -7px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            background: #e9a23b;
+            border-radius: 50%;
+        }
+
+        .timeline-item h3 {
+            color: #1d3557;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item span {
+            font-size: 13px;
+            color: #e9a23b;
+            font-weight: bold;
+        }
+
+        .timeline-item p {
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #1d3557;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title h2 {
+            color: white;
+        }
+
+        .contact p {
+            color: #d9e1ea;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 12px 22px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover {
+            background: #e9a23b;
+            border-color: #e9a23b;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #14263d;
+            color: #bfc8d4;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 11px;
+            }
+
+            .hero {
+                padding: 120px 7% 60px;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-photo {
+                width: 270px;
+                height: 320px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 7%;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Zahira<span>.</span></div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div class="hero-text">
+
+            <div class="small-title">
+                MARKETING MANAGEMENT STUDENT
+            </div>
+
+            <h1>
+                Hello, I'm<br>
+                <span>Zahira.</span>
+            </h1>
+
+            <p>
+                Mahasiswa Manajemen Pemasaran yang memiliki ketertarikan
+                pada pemasaran, bisnis, e-commerce, pengelolaan proyek,
+                serta pengembangan ide kreatif.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">
+                    Lihat Project
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Hubungi Saya
+                </a>
+            </div>
+
+        </div>
+
+
+        <!--
+        GANTI FOTO DI SINI
+
+        Kalau belum punya foto, bagian ini bisa tetap digunakan.
+        Untuk memasukkan foto:
+        1. Upload foto ke repository GitHub
+        2. Ganti "foto.jpg" dengan nama file foto kamu.
+        -->
+
+        <div class="hero-photo">
+            <img src="foto.jpg" alt="Foto Zahira">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="section-title">
+        <small>ABOUT ME</small>
+        <h2>Tentang Saya</h2>
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-text">
+
+            <h3>Belajar, Berkembang & Berkarya</h3>
+
+            <p>
+                Saya merupakan mahasiswa Manajemen Pemasaran yang
+                tertarik untuk memahami bagaimana strategi pemasaran
+                dapat diterapkan dalam dunia bisnis.
+            </p>
+
+            <p>
+                Melalui berbagai kegiatan akademik, proyek, dan
+                pengalaman praktik, saya terus mengembangkan kemampuan
+                dalam pemasaran, komunikasi, kerja sama tim, serta
+                pengelolaan proyek.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3 style="color:#1d3557; margin-bottom:20px;">
+                Skills
+            </h3>
+
+            <div class="skills">
+
+                <div class="skill">Marketing</div>
+                <div class="skill">Digital Marketing</div>
+                <div class="skill">E-Commerce</div>
+                <div class="skill">Social Media</div>
+                <div class="skill">Content Creation</div>
+                <div class="skill">Teamwork</div>
+                <div class="skill">Communication</div>
+                <div class="skill">Microsoft Office</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+
+    <div class="section-title">
+
+        <small>MY WORK</small>
+
+        <h2>Projects</h2>
+
+    </div>
+
+
+    <div class="project-grid">
+
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 01
+            </div>
+
+            <h3>Project PKL PT STTCC</h3>
+
+            <p>
+                Pengalaman dan kegiatan selama Praktik Kerja Lapangan
+                di PT Surabaya Technology Training and Consultant Center
+                (PT STTCC), termasuk kegiatan yang berkaitan dengan
+                pemasaran dan pengembangan program.
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 02
+            </div>
+
+            <h3>E-Commerce & E-Marketing</h3>
+
+            <p>
+                Project akademik mengenai penerapan e-commerce dan
+                e-marketing dalam mendukung kegiatan pemasaran serta
+                hubungan dengan pelanggan di era digital.
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 03
+            </div>
+
+            <h3>Manajemen Rantai Pasok</h3>
+
+            <p>
+                Project observasi dan analisis mengenai manajemen
+                rantai pasok pada UMKM, mulai dari pengadaan bahan,
+                proses produksi hingga distribusi produk.
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 04
+            </div>
+
+            <h3>Design & Content</h3>
+
+            <p>
+                Project pembuatan desain dan konten sebagai media
+                komunikasi pemasaran untuk menyampaikan informasi
+                secara menarik dan mudah dipahami.
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 05
+            </div>
+
+            <h3>Project Lainnya</h3>
+
+            <p>
+                Berbagai tugas, kegiatan, dan project lainnya yang
+                dikerjakan selama proses pembelajaran di bidang
+                Manajemen Pemasaran.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+
+    <div class="section-title">
+
+        <small>MY JOURNEY</small>
+
+        <h2>Experience</h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <span>PRAKTIK KERJA LAPANGAN</span>
+
+            <h3>Pengalaman PKL</h3>
+
+            <p>
+                Mengikuti kegiatan Praktik Kerja Lapangan dan
+                mendapatkan pengalaman mengenai dunia kerja,
+                komunikasi, tanggung jawab, serta penerapan ilmu
+                yang telah dipelajari.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <span>ORGANISASI & KEGIATAN</span>
+
+            <h3>Pengalaman Organisasi/Kegiatan</h3>
+
+            <p>
+                Berpartisipasi dalam berbagai kegiatan yang
+                membantu mengembangkan kemampuan komunikasi,
+                kerja sama tim, tanggung jawab, dan kemampuan
+                beradaptasi.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <small>GET IN TOUCH</small>
+
+        <h2>Let's Connect</h2>
+
+    </div>
+
+    <p>
+        Terima kasih sudah mengunjungi portfolio saya.
+        Jika ingin terhubung atau berdiskusi mengenai project,
+        kerja sama, maupun kesempatan lainnya, silakan hubungi saya.
+    </p>
+
+
+    <div class="contact-links">
+
+        <!-- GANTI LINK DI BAWAH -->
+
+        <a href="https://instagram.com/" target="_blank">
+            Instagram
+        </a>
+
+        <a href="https://linkedin.com/" target="_blank">
+            LinkedIn
+        </a>
+
+        <a href="mailto:emailkamu@gmail.com">
+            Email
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    © 2026 Zahira — Marketing Management Portfolio
+
+</footer>
+
+
+</body>
+</html>
